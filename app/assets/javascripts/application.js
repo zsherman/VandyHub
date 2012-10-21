@@ -17,9 +17,10 @@
 
 jQuery(function($) {
 	$('.upvote').on('ajax:success', function(data, status, xhr){
-		$(this).next('.votes').html('<p>'+status.votes+'</p>');
+		console.log(status);
+		$(this).next('.votes').html('<p>'+status+' votes </p>');
+		$(this).remove();
 		console.log('success');
-		console.log(status.votes);
 	});
 });
 

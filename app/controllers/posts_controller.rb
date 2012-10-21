@@ -2,7 +2,7 @@ class PostsController < ApplicationController
 	respond_to :html, :xml, :json
 
 	def index
-		@posts = Post.all
+		@posts = Post.find_with_reputation(:votes, :all, order: "votes desc")
 	end
 
 	def show
@@ -33,16 +33,20 @@ class PostsController < ApplicationController
 
   	def upvote
   		@post = Post.find(params[:id])
-  		@post.votes += 1
+  		@post.add_evaluation(:votes, 1, current_user)
   		respond_to do |format|
   			if @post.save
   				logger.info "it saved"
-  				format.json { render :json => @post, :status => :ok }
+  				format.json { render :json => @post.reputation_for(:votes), :status => :ok }
   			else
   				format.json { render :json => @post.errors }
   			end
   		end
 
+  	end
+
+  	def newest
+  		@posts = Post.find(:all, :order => "created_at DESC")
   	end
 
 end

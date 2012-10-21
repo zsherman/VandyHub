@@ -5,7 +5,6 @@ class CreatePosts < ActiveRecord::Migration
       t.text :description
       t.references :user
       t.integer :views
-      t.integer :votes 
       t.timestamps
     end
   end

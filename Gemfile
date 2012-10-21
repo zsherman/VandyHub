@@ -9,6 +9,7 @@ gem 'sqlite3'
 gem 'devise'
 gem 'yajl-ruby'
 gem 'ancestry'
+gem 'activerecord-reputation-system'
 
 # Gems used only for assets and not required
 # in production environments by default.

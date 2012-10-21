@@ -8,7 +8,8 @@ Vandyhub::Application.routes.draw do
     resources :comments
   end
 
-  match '/posts/:id/upvote' => 'posts#upvote', :method => "put", :as => :upvote
+  match '/posts/:id/upvote' => 'posts#upvote', :method => "post", :as => :upvote
+  match '/newest' => 'posts#newest', :method => "get", :as => :newest
 
   root :to => "posts#index"
   # The priority is based upon order of creation:
