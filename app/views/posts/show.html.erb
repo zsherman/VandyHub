@@ -1,0 +1,9 @@
+<p><%= @post.title %></p>
+<p><%= @post.description %></p>
+
+<%= nested_comments(@comments.arrange(:order => :created_at)) %>
+
+<%= form_for [@post, @comment] do |f| %>
+   <%= f.text_area :content, :rows => 5 %>
+   <%= f.submit "Post Comment" %>
+<% end %>

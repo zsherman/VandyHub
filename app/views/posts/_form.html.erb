@@ -1,0 +1,12 @@
+<%= form_for @post do |f| %>
+  <% # f.error_messages %>
+  <p>
+    <%= f.label :title, "New Thread" %><br />
+    <%= f.text_field :title %>
+  </p>
+  <p>
+    <%= f.label :description, "Description" %><br />
+    <%= f.text_area :description, :rows => 8 %>
+  </p>
+  <p><%= f.submit "Submit" %></p>
+<% end %>

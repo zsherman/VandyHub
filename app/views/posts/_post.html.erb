@@ -1,0 +1,6 @@
+<% if user_signed_in? %>
+	<%= link_to "Upvote", upvote_path(post), :remote => "true", "data-type" => :json, :class => "upvote", :method => :put %>
+<% else %>
+	<%= link_to "Upvote", new_user_session_path %>
+<% end %>
+<p class="votes"><%= post.votes.to_s %></p><h6><%= link_to post.title, post %></h6>
