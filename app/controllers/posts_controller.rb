@@ -2,7 +2,7 @@ class PostsController < ApplicationController
 	respond_to :html, :xml, :json
 
 	def index
-		@posts = Post.find_with_reputation(:votes, :all, order: "votes desc")
+		@posts = Post.paginate(:page => params[:page]).find_with_reputation(:votes, :all, order: "votes desc")
 	end
 
 	def show

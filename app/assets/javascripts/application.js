@@ -18,7 +18,7 @@
 jQuery(function($) {
 	$('.upvote').on('ajax:success', function(data, status, xhr){
 		console.log(status);
-		$(this).next('.votes').html('<p>'+status+' votes </p>');
+		$(this).next('.vote-count').html('<p>'+status+' votes </p>');
 		$(this).remove();
 		console.log('success');
 	});
