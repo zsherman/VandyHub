@@ -18,7 +18,11 @@
 jQuery(function($) {
 	$('.upvote').on('ajax:success', function(data, status, xhr){
 		console.log(status);
-		$(this).next('.vote-count').html('<span class="vote-count">'+status+' votes </span>');
+		if(status !== 1) {
+			$(this).next('.vote-count').html('<span class="vote-count">'+status+' votes </span>');
+		} else {
+			$(this).next('.vote-count').html('<span class="vote-count">'+status+' vote </span>');
+		}
 		//$(this).remove();
 		console.log('success');
 	});
