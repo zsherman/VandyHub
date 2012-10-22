@@ -10,4 +10,7 @@
 		</div>
 	</div>
 	<span class="post-title"><%= link_to post.title, post %> <span class="post-user">posted by <%= post.user.username %> (<%= time_ago_in_words(post.created_at)%> ago)</span></span>
+	<div class="post-teaser">
+		<p class="teaser"><%= post_teaser(post) %></p>
+	</div>
 </div>
