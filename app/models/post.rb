@@ -7,7 +7,7 @@ class Post < ActiveRecord::Base
   #default_scope order('created_at DESC')
   has_reputation :votes, source: :user, aggregated_by: :sum
   mount_uploader :image, ImageUploader
-  self.per_page = 10
+  self.per_page = 5
 
 
   def self.most_voted

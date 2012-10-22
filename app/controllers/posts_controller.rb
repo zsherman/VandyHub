@@ -26,9 +26,9 @@ class PostsController < ApplicationController
   end
 
 	def destroy
-  	@post = Post.find(params[:id])
-  	@post.destroy
-  	redirect_to posts_url
+	  	@post = Post.find(params[:id])
+	  	@post.destroy
+	  	redirect_to posts_url
 	end
 
 	def upvote
@@ -46,7 +46,7 @@ class PostsController < ApplicationController
 	end
 
 	def newest
-		@posts = Post.find(:all, :order => "created_at DESC")
+		@posts = Post.paginate(:page => params[:page]).find(:all, :order => "created_at DESC")
 	end
 
   def edit

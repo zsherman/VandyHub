@@ -1,5 +1,11 @@
 <div class="comment">
 	<%= comment.content %>
 	<span class="comment-info"><%= "Posted by " + comment.user.username unless comment.user.nil? %></br></span>
-	<%= link_to "Reply", new_post_comment_path(@post, :parent_id => comment.id) %>
+	<span class="comment-actions"><%= link_to "Reply", new_post_comment_path(@post, :parent_id => comment.id) %>
+		<% if current_user && (comment.user == current_user || current_user.admin == true) %>
+			<%= link_to "Edit", edit_post_comment_path(:id => comment.id, :post_id => @post.id) %>
+			<%# link_to "Delete", comment, :confirm => "Are you sure?", :method => :delete %>
+			<%= link_to "Delete", post_comment_path(@post.id, comment.id), :confirm => "Are you sure?", :method => :delete %>
+		<% end %>
+	</span>
 </div>

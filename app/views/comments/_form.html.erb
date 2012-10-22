@@ -1,0 +1,6 @@
+<%= form_for [@post, @comment] do |f| %>
+   <%= f.hidden_field :parent_id %>
+   <%= f.label :content, "Reply" %>
+   <%= f.text_area :content, :rows => 5 %>
+   <%= f.submit "Post Comment" %>
+<% end %>

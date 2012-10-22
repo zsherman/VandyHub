@@ -109,6 +109,7 @@ body {
 	left: 0px;
 	height: 30px;
 	width: 80px;
+	margin: 0 5px 5px 0;
 	background: #eabd54; /* Old browsers */
 	background: -moz-linear-gradient(top, #eabd54 0%, #d8ab4c 100%); /* FF3.6+ */
 	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#eabd54), color-stop(100%,#d8ab4c)); /* Chrome,Safari4+ */
@@ -128,24 +129,27 @@ body {
 }
 
 .post-teaser {
-	position: relative;
-	float: left;
-	margin-top: 5px;
-	padding: 3px 3px 3px 20px;
-	width: 90%;	
+	padding-left: 10px;
+	padding-right: 5px;	
 }
 
 .post-actions {
 	font-size: 12px;
 }
 
-.post-image {
+.post img {
 	float: left;
 	margin: 5px;
 }
 
 .post-description {
 	margin-left: 5px;
+}
+
+.post-index-image {
+	display: block;
+	padding-top: 20px;
+	padding-left: 5px;
 }
 
 .comment-count {

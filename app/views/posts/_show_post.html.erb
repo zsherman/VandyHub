@@ -10,12 +10,10 @@
 		</div>
 	</div>
 	<span class="post-title"><%= link_to post.title, post %> <span class="post-user">posted by <%= post.user.username %> (<%= time_ago_in_words(post.created_at)%> ago)</span></span></br>
-	<div class="post-teaser">
 		<div class="post-image">
 			<% unless !post.image? %><%= image_tag post.image_url(:thumb).to_s %><% end %>
 		</div>
 		<p class="post-description"><%= post.description %></p>
-	</div>
 	<p class="comment-count"><%= pluralize post.comments.count, "comment" %>
 		<% if current_user && (post.user == current_user || current_user.admin == true) %>
 			<%= link_to "Edit", edit_post_path(post) %> <%= link_to "Delete", post, :confirm => "Are you sure?", :method => :delete %>

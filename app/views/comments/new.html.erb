@@ -1,9 +1,4 @@
 <div class="comment">
 	<%= @parent_comment.content %> <span class="comment-info"> <%=@parent_comment.user.username %></span>
 </div>
-<%= form_for [@post, @comment] do |f| %>
-   <%= f.hidden_field :parent_id %>
-   <%= f.label :content, "Reply" %>
-   <%= f.text_area :content, :rows => 5 %>
-   <%= f.submit "Post Comment" %>
-<% end %>
+<%= render "form" %>
