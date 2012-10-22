@@ -23,30 +23,43 @@ class PostsController < ApplicationController
 	    else
 	      render :new
 	    end
-  	end
+  end
 
-  	def destroy
-    	@post = Post.find(params[:id])
-    	@post.destroy
-    	redirect_to posts_url
-  	end
+	def destroy
+  	@post = Post.find(params[:id])
+  	@post.destroy
+  	redirect_to posts_url
+	end
 
-  	def upvote
-  		@post = Post.find(params[:id])
-  		@post.add_evaluation(:votes, 1, current_user)
-  		respond_to do |format|
-  			if @post.save
-  				logger.info "it saved"
-  				format.json { render :json => @post.reputation_for(:votes), :status => :ok }
-  			else
-  				format.json { render :json => @post.errors }
-  			end
-  		end
+	def upvote
+		@post = Post.find(params[:id])
+		@post.add_evaluation(:votes, 1, current_user)
+		respond_to do |format|
+			if @post.save
+				logger.info "it saved"
+				format.json { render :json => @post.reputation_for(:votes), :status => :ok }
+			else
+				format.json { render :json => @post.errors }
+			end
+		end
 
-  	end
+	end
 
-  	def newest
-  		@posts = Post.find(:all, :order => "created_at DESC")
-  	end
+	def newest
+		@posts = Post.find(:all, :order => "created_at DESC")
+	end
+
+  def edit
+    @post = Post.find(params[:id])
+  end
+
+  def update
+    @post = Post.find(params[:id])
+    if @post.update_attributes(params[:post])
+      redirect_to @post, :flash => { :notice => "Post updated." }
+    else
+      render 'edit'
+    end
+  end
 
 end

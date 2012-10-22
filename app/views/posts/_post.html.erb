@@ -14,4 +14,9 @@
 		<p class="teaser"><%= post_teaser(post) %></p>
 	</div>
 	<p class="comment-count"><%= pluralize post.comments.count, "comment" %> in this thread </p>
+	<span class="post-actions">
+		<% if current_user && (post.user == current_user || current_user.admin == true) %>
+			<%= link_to "Edit", edit_post_path(post) %> <%= link_to "Delete", post, :confirm => "Are you sure?", :method => :delete %>
+		<% end %>
+	</span>
 </div>
