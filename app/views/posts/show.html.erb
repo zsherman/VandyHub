@@ -1,16 +1,1 @@
-<p><%= @post.title %></p>
-<p><%= @post.description %></p>
-<% if user_signed_in? %>
-	<%= link_to raw("<i class='icon-circle-arrow-up'></i>"), upvote_path(@post), :remote => "true", "data-type" => :json, :class => "upvote", :method => :post %>
-<% else %>
-	<%= link_to raw("<i class='icon-circle-arrow-up'></i>"), new_user_session_path %>
-<% end %>
-<p class="votes"><%= pluralize @post.reputation_for(:votes).to_i, "vote" %></p>
-</br>
-
-<%= nested_comments(@comments.arrange(:order => :created_at)) %>
-
-<%= form_for [@post, @comment] do |f| %>
-   <%= f.text_area :content, :rows => 5 %>
-   <%= f.submit "Post Comment" %>
-<% end %>
+<%= render :partial => "show_post", :locals => { :post => @post } %>

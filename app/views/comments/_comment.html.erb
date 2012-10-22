@@ -1,3 +1,5 @@
-<%= comment.content %>
-<%= "Posted by " + comment.user.username unless comment.user.nil? %></br>
-<%= link_to "Reply", new_post_comment_path(@post, :parent_id => comment.id) %>
+<div class="comment">
+	<%= comment.content %>
+	<span class="comment-info"><%= "Posted by " + comment.user.username unless comment.user.nil? %></br></span>
+	<%= link_to "Reply", new_post_comment_path(@post, :parent_id => comment.id) %>
+</div>

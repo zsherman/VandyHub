@@ -18,9 +18,13 @@
 jQuery(function($) {
 	$('.upvote').on('ajax:success', function(data, status, xhr){
 		console.log(status);
-		$(this).next('.vote-count').html('<p>'+status+' votes </p>');
+		$(this).next('.vote-count').html('<span class="vote-count">'+status+' votes </span>');
 		//$(this).remove();
 		console.log('success');
+	});
+
+	$(".upvote").on("mouseover", function () {
+		$(this).tooltip('show');
 	});
 });
 

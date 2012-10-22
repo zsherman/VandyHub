@@ -11,7 +11,15 @@
 	</div>
 	<span class="post-title"><%= link_to post.title, post %> <span class="post-user">posted by <%= post.user.username %> (<%= time_ago_in_words(post.created_at)%> ago)</span></span></br>
 	<div class="post-teaser">
-		<p class="teaser"><%= post_teaser(post) %></p>
+		<p class="description"><%= post.description %></p>
 	</div>
-	<p class="comment-count"><%= pluralize post.comments.count, "comment" %> in this thread </p>
+	<p class="comment-count"><%# pluralize post.comments.count, "comment" %> </p>
 </div>
+<div id="comments">
+	<%= nested_comments(@comments.arrange(:order => :created_at)) %>
+</div>
+
+<%= form_for [@post, @comment] do |f| %>
+   <%= f.text_area :content, :rows => 5, :columns => 50 %>
+   <%= f.submit "Post Comment" %>
+<% end %>
