@@ -1,13 +1,13 @@
 <div class="post">
-	<div class = "upvote-container">
-		<% if user_signed_in? %>
-			<%= link_to raw("<i class='icon-chevron-up'></i>"), upvote_path(post), :remote => "true", "data-type" => :json, :class => "upvote", :method => :post %>
-		<% else %>
-			<%= link_to raw("<i class='icon-circle-arrow-up'></i>"), new_user_session_path %>
-		<% end %>
+	<div class="vote-info">
+		<div class="votes">
+			<% if user_signed_in? %>
+				<%= link_to raw("<i class='icon-chevron-up'></i>"), upvote_path(post), :remote => "true", "data-type" => :json, :class => "upvote", :method => :post %>
+			<% else %>
+				<%= link_to raw("<i class='icon-circle-arrow-up'></i>"), new_user_session_path %>
+			<% end %>
+			<span class="vote-count"><%= pluralize post.reputation_for(:votes).to_i, "vote" %></span>
+		</div>
 	</div>
-	<div class="votes">
-		<p class="vote-count"><%= pluralize post.reputation_for(:votes).to_i, "vote" %></p>
-	</div>
-	<h6><%= link_to post.title, post %></h6>
+	<span class="post-title"><%= link_to post.title, post %> <span class="post-user">posted by <%= post.user.username %> (<%= time_ago_in_words(post.created_at)%> ago)</span></span>
 </div>

@@ -1,5 +1,5 @@
 class Post < ActiveRecord::Base
-  attr_accessible :title, :description, :comments_attributes
+  attr_accessible :title, :description, :comments_attributes, :created_at
   validates_presence_of :title, :description
   belongs_to :user
   has_many :comments, :dependent => :destroy
