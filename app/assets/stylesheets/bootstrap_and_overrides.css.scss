@@ -2,6 +2,34 @@
 body { padding-top: 60px; }
 @import "bootstrap-responsive";
 
+body {
+	background-image: url('/assets/noise.jpeg');
+}
+
+.navbar-inner {
+	background: #141004; /* Old browsers */
+	background: -moz-linear-gradient(top, #141004 0%, #333231 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#141004), color-stop(100%,#333231)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, #141004 0%,#333231 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, #141004 0%,#333231 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top, #141004 0%,#333231 100%); /* IE10+ */
+	background: linear-gradient(to bottom, #141004 0%,#333231 100%); /* W3C */
+}
+
+.navbar .brand {
+	color: #eab92d;
+	text-shadow: none;
+}
+
+.navbar .nav li a {
+	color: #eab92d;
+	text-shadow: none;
+}
+
+.navbar .nav { 
+	float: right; 
+}
+
 .nested_comments {
 	margin-left: 30px;
 }
@@ -16,6 +44,15 @@ body { padding-top: 60px; }
 	background-color: white;
 	position: relative;
 	min-height: 40px;
+	border: 1px solid #BBB;
+	border-radius: 4px;
+	background: #ffffff; /* Old browsers */
+	background: -moz-linear-gradient(top, #ffffff 0%, #f6f6f6 47%, #ededed 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(47%,#f6f6f6), color-stop(100%,#ededed)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, #ffffff 0%,#f6f6f6 47%,#ededed 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, #ffffff 0%,#f6f6f6 47%,#ededed 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top, #ffffff 0%,#f6f6f6 47%,#ededed 100%); /* IE10+ */
+	background: linear-gradient(to bottom, #ffffff 0%,#f6f6f6 47%,#ededed 100%); /* W3C */
 }
 
 .post-title {
@@ -23,6 +60,7 @@ body { padding-top: 60px; }
 	margin-left: 90px;
 	float: left;
 	margin-top: 9px;
+	width: 90%;
 }
 
 .post-title:hover {
@@ -44,7 +82,15 @@ body { padding-top: 60px; }
 	left: 0px;
 	height: 30px;
 	width: 80px;
-	background-color: gold;
+	background: #f1e767; /* Old browsers */
+	background: #ffd65e; /* Old browsers */
+	background: #eab92d; /* Old browsers */
+background: -moz-linear-gradient(top, #eab92d 0%, #c79810 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#eab92d), color-stop(100%,#c79810)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top, #eab92d 0%,#c79810 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top, #eab92d 0%,#c79810 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top, #eab92d 0%,#c79810 100%); /* IE10+ */
+background: linear-gradient(to bottom, #eab92d 0%,#c79810 100%); /* W3C */
 }
 
 .votes {
@@ -60,7 +106,13 @@ body { padding-top: 60px; }
 	position: relative;
 	float: left;
 	margin-top: 5px;
-	padding: 3px 3px 3px 10px;	
+	padding: 3px 3px 3px 20px;
+	width: 90%;	
 }
 
+.comment-count {
+	float: left;
+	font-size: 12px;
+	padding-left: 6px;
+}
 

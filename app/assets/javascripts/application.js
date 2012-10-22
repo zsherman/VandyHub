@@ -19,7 +19,7 @@ jQuery(function($) {
 	$('.upvote').on('ajax:success', function(data, status, xhr){
 		console.log(status);
 		$(this).next('.vote-count').html('<p>'+status+' votes </p>');
-		$(this).remove();
+		//$(this).remove();
 		console.log('success');
 	});
 });

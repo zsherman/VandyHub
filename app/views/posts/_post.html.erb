@@ -9,8 +9,9 @@
 			<span class="vote-count"><%= pluralize post.reputation_for(:votes).to_i, "vote" %></span>
 		</div>
 	</div>
-	<span class="post-title"><%= link_to post.title, post %> <span class="post-user">posted by <%= post.user.username %> (<%= time_ago_in_words(post.created_at)%> ago)</span></span>
+	<span class="post-title"><%= link_to post.title, post %> <span class="post-user">posted by <%= post.user.username %> (<%= time_ago_in_words(post.created_at)%> ago)</span></span></br>
 	<div class="post-teaser">
 		<p class="teaser"><%= post_teaser(post) %></p>
 	</div>
+	<p class="comment-count"><%= pluralize post.comments.count, "comment" %> in this thread </p>
 </div>
