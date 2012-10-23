@@ -10,9 +10,7 @@
 		</div>
 	</div>
 	<span class="post-title"><%= link_to post.title, post %> <span class="post-user">posted by <%= post.user.username %> (<%= time_ago_in_words(post.created_at)%> ago)</span></span></br>
-		<div class="post-image">
-			<% unless !post.image? %><%= image_tag post.image_url(:thumb).to_s %><% end %>
-		</div>
+		<% unless !post.image? %><%= image_tag post.image_url(:thumb).to_s %><% end %>
 		<p class="post-description"><%= post.description %></p>
 	<p class="comment-count"><%= pluralize post.comments.count, "comment" %>
 		<% if current_user && (post.user == current_user || current_user.admin == true) %>
