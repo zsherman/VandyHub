@@ -9,11 +9,15 @@
     <%= stylesheet_link_tag    "application", :media => "all" %>
     <%= javascript_include_tag "application" %>
     <%= csrf_meta_tags %>
+    <link href='http://fonts.googleapis.com/css?family=Vollkorn' rel='stylesheet' type='text/css'>
     <%= yield(:head) %>
   </head>
   <body>
     <header class="navbar navbar-fixed-top">
       <nav class="navbar-inner">
+        <div class="bronelius"><a href="http://en.wikipedia.org/wiki/Cornelius_Vanderbilt">
+          <%= image_tag "bronelius.png" %></a>
+        </div>
         <div class="container">
           <%= render 'layouts/navigation' %>
         </div>

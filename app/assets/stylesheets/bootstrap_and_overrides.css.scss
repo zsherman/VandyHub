@@ -6,6 +6,13 @@ body {
 	background-image: url('/assets/noise.jpeg');
 }
 
+.bronelius {
+	position: absolute;
+	top: -5px;
+	left: 320px;
+	z-index: 2500;
+}
+
 .navbar-fixed-top {
 	z-index: 0;
 	position: relative;
@@ -13,11 +20,12 @@ body {
 
 .navbar-inner {
 	height: 150px;
+	background-image: url('/assets/bronelious.png') no-repeat;
 }
 
 .content {
 	z-index: 1;
-	margin-top: -80px;
+	margin-top: -60px;
 	position: relative;
 	border-radius: 4px;
 }
@@ -36,14 +44,16 @@ body {
 	color: #FC6;
 	text-shadow: none;
 	font-size: 40px;
-	margin-top: 10px;
+	margin-top: 40px;
+	padding-left: 40px;
+	font-family: 'Vollkorn', serif;
 }
 
 .navbar .nav { 
 	float: right;
 	background-color: #D8AB4C;
 	border-radius: 4px;
-	margin-top: 35px;
+	margin-top: 55px;
 
 }
 
@@ -67,7 +77,7 @@ body {
 
 .post {
 	margin: 5px 3px 5px 3px;
-	overflow: auto;
+	overflow: hidden;
 	background-color: white;
 	position: relative;
 	min-height: 40px;
@@ -144,6 +154,7 @@ body {
 
 .post-description {
 	margin-left: 5px;
+	padding-top: 20px;
 }
 
 .post-index-image {
