@@ -18,7 +18,7 @@ class Post < ActiveRecord::Base
   def self.find_by_hotness
     posts = Post.find(:all, :order => 'created_at DESC')
     posts.each do|post|
-      post.hotness = ((post.reputation_for(:votes).to_f)/((Time.now - post.created_at).to_f))
+      post.hotness = (((post.reputation_for(:votes).to_f)-1)/((Time.now - post.created_at).to_f))
     end
     posts.sort! { |a,b| b.hotness <=> a.hotness }
     return posts
