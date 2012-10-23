@@ -2,7 +2,22 @@ class PostsController < ApplicationController
 	respond_to :html, :xml, :json
 
 	def index
-		@posts = Post.paginate(:page => params[:page]).find_with_reputation(:votes, :all, order: "votes desc")
+		# @posts = Post.paginate(:page => params[:page]).find_with_reputation(:votes, :all, order: "votes desc")
+		# logger.info @posts
+		@posts = Post.paginate(:page => params[:page]).find_by_hotness
+		# @posts.each do|post|
+		# 	# logger.info "votes:"
+		# 	# logger.info (post.reputation_for(:votes).to_f)
+		# 	# logger.info "Time ago:"
+		# 	# logger.info (Time.at(post.created_at.to_f).to_f)
+		# 	# logger.info "Time ago:"
+		# 	# logger.info ((Time.now - post.created_at).to_f)
+		# 	post.hotness = ((post.reputation_for(:votes).to_f)/((Time.now - post.created_at).to_f))
+		# 	# logger.info "Hotness:"
+		# 	# logger.info post.hotness
+		# end
+		# @posts.sort! { |a,b| b.hotness <=> a.hotness }
+		# logger.info @posts
 	end
 
 	def show
