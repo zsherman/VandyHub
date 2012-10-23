@@ -36,4 +36,8 @@ Vandyhub::Application.configure do
   config.assets.debug = true
 
   config.action_mailer.default_url_options = { :host => 'localhost:3000' }
+
+  ENV['AMAZON_ACCESS_KEY'] = 'AKIAIBEPZ3MC6ITFC6OQ';
+  ENV['AMAZON_SECRET_KEY'] = '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';
+
 end

@@ -7,10 +7,13 @@ body {
 }
 
 .bronelius {
-	position: absolute;
+	background-image: url('/assets/bronelius.png');
+
+	height: 119px;
+	width: 99px;
 	top: -5px;
-	left: 320px;
-	z-index: 2500;
+	position: fixed;
+	right: 715px;
 }
 
 .navbar-fixed-top {
