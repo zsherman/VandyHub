@@ -1,4 +1,10 @@
 <div class="comment">
-	<%= @parent_comment.content %> <span class="comment-info"> <%=@parent_comment.user.username %></span>
+	<%= @parent_comment.content %><span class="comment-info">
+	<% if @parent_comment.user %>
+		<%=@parent_comment.user.username %>
+	<% else %>
+		<%= "anonymous" %>
+	<% end %>
+	</span>
 </div>
 <%= render "form" %>
