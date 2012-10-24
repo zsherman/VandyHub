@@ -106,7 +106,7 @@ body {
 }
 
 .post-title:hover {
-	text-decoration: underline;
+	
 }
 
 .post-user {
@@ -154,7 +154,14 @@ body {
 
 .post img {
 	float: left;
-	padding: 5px;
+	padding: 10px;
+}
+
+.post .view-thread {
+	position: absolute;
+	top: 2px;
+	right: 5px;
+	font-size: 12px;
 }
 
 .post-description {
@@ -169,9 +176,10 @@ body {
 }
 
 .comment-count {
-	float: left;
+	position: absolute;
 	font-size: 12px;
-	padding-left: 6px;
+	bottom: 0px;
+	right: 10px;
 }
 
 .comment {

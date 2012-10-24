@@ -2,18 +2,18 @@
   <% # f.error_messages %>
   <p>
     <%= f.label :title, "New Thread" %><br />
-    <%= f.text_field :title %>
+    <%= f.text_field :title, :placeholder => "Title" %>
   </p>
   <p>
     <%= f.label :description, "Description" %><br />
-    <%= f.text_area :description, :rows => 8 %>
+    <%= f.text_area :description, :rows => 8, :placeholder => "What's this about?" %>
   </p>
   <p>
     <%= f.file_field :image %>
   </p>
   <p>
     <%= f.label :remote_image_url, "or image URL (Please choose one or the other.)" %><br />
-    <%= f.text_field :remote_image_url %>
+    <%= f.text_field :remote_image_url, :placeholder => "Image Link Here" %>
   </p>
   <p><%= f.submit "Submit" %></p>
 <% end %>
