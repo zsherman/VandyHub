@@ -15,7 +15,7 @@
 			<% unless !post.image? %><%= image_tag post.image_url(:thumb).to_s %><% end %>
 		</div>
 	<div class="post-teaser">
-		<p class="teaser"><%= post_teaser(post) %></p>
+		<p class="teaser"><%= raw(Rinku.auto_link(post_teaser(post), :all, 'target="_blank"')) %></p>
 	</div>
 	<p class="comment-count"><%= pluralize post.comments.count, "comment" %> in this thread
 	<span class="post-actions">

@@ -15,7 +15,8 @@ gem 'carrierwave'
 gem 'rmagick'
 gem 'fog'
 gem 'thin'
-#gem 'sqlite3'
+gem 'rinku'
+gem 'sqlite3'
 gem 'activeadmin'
 # Gems used only for assets and not required
 # in production environments by default.

@@ -1,5 +1,5 @@
 <div class="comment">
-	<%= @parent_comment.content %><span class="comment-info">
+	<%= raw(Rinku.auto_link(@parent_comment.content, :all, 'target="_blank"')) %><span class="comment-info">
 	<% if @parent_comment.user %>
 		<%=@parent_comment.user.username %>
 	<% else %>

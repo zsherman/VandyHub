@@ -1,5 +1,5 @@
 <div class="comment">
-	<%= comment.content %>
+	<%= raw(Rinku.auto_link(comment.content, :all, 'target="_blank"')) %>
 	<span class="comment-info">
 		<% if comment.user %>
 			<%= "Posted by " + comment.user.username unless comment.user.nil? %>
