@@ -1,7 +1,7 @@
 <div class="comment">
 	<%= comment.content %>
 	<span class="comment-info">
-		<% if comment.user? %>
+		<% if comment.user %>
 			<%= "Posted by " + comment.user.username unless comment.user.nil? %>
 		<% else %>
 			<%= "Posted by anonymous" %>
