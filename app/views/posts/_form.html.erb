@@ -13,7 +13,7 @@
   </p>
   <p>
     <%= f.label :remote_image_url, "or image URL (Please choose one or the other.)" %><br />
-    <%= f.text_field :remote_image_url, :placeholder => "Image Link Here" %>
+    <%= f.text_field :remote_image_url, :placeholder => (@post.image) %>
   </p>
   <p><%= f.submit "Submit" %></p>
 <% end %>
