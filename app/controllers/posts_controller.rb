@@ -2,7 +2,8 @@ class PostsController < ApplicationController
 	respond_to :html, :xml, :json
 
 	def index
-		@posts = Post.page(params[:page]).find_by_hotness
+		@posts = Post.find_by_hotness.paginate(:page => params[:page])
+
 	end
 
 	def show
