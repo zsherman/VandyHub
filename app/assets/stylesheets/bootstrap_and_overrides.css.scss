@@ -6,13 +6,13 @@ body {
 	background-image: url('/assets/noise.jpeg');
 }
 
-.bronelius {
+#bronelius {
+	float: left;
+	position: relative;
+}
 
-	background-image: url('/assets/bronelius.png');
-
-	height: 119px;
-	width: 99px;
-
+.speech-bubble {
+	  
 }
 
 .navbar-fixed-top {
@@ -73,10 +73,6 @@ body {
 	margin-left: 30px;
 }
 
-#posts {
-
-}
-
 .post {
 	margin: 5px 3px 5px 3px;
 	overflow: hidden;
@@ -93,6 +89,10 @@ body {
 	background: -o-linear-gradient(top, #ffffff 0%,#f6f6f6 47%,#ededed 100%); /* Opera 11.10+ */
 	background: -ms-linear-gradient(top, #ffffff 0%,#f6f6f6 47%,#ededed 100%); /* IE10+ */
 	background: linear-gradient(to bottom, #ffffff 0%,#f6f6f6 47%,#ededed 100%); /* W3C */
+}
+
+.post-error {
+	color: red;
 }
 
 .post-title {
@@ -144,6 +144,10 @@ body {
 .post-teaser {
 	padding-left: 10px;
 	padding-right: 5px;	
+}
+
+p.teaser {
+	padding-top: 6px;
 }
 
 .post-actions {

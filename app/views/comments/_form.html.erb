@@ -1,4 +1,7 @@
 <%= form_for [@post, @comment] do |f| %>
+   <% @post.errors.full_messages.each do |msg| %>
+      <p class="post-error" style="color:red"><%= msg %></p>
+   <% end %>
    <%= f.hidden_field :parent_id %>
    <%= f.label :content, "Reply" %>
    <%= f.text_area :content, :placeholder => "Comment..." %>

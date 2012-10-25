@@ -1,18 +1,20 @@
 <%= form_for @post, :html => {:multipart => :true} do |f| %>
-  <% # f.error_messages %>
+  <% @post.errors.full_messages.each do |msg| %>
+      <p class="post-error" style="color:red"><%= msg %></p>
+   <% end %>
   <p>
     <%= f.label :title, "New Thread" %><br />
     <%= f.text_field :title, :placeholder => "Title" %>
   </p>
   <p>
     <%= f.label :description, "Description" %><br />
-    <%= f.text_area :description, :rows => 8, :placeholder => "What's this about?" %>
+    <%= f.text_area :description, :rows => 8, :placeholder => "What's this about? (Not Required)" %>
   </p>
   <p>
     <%= f.file_field :image %>
   </p>
   <p>
-    <%= f.label :remote_image_url, "or image URL (Please choose one or the other.)" %><br />
+    <%= f.label :remote_image_url, "or image URL (Please choose one or the other. Large files may take a moment to submit.)" %><br />
     <%= f.text_field :remote_image_url, :placeholder => (@post.image) %>
   </p>
   <p><%= f.submit "Submit" %></p>

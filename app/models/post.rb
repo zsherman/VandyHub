@@ -1,7 +1,7 @@
 class Post < ActiveRecord::Base
   attr_accessible :title, :description, :comments_attributes, :image, :remote_image_url, :created_at
   attr_accessor :hotness
-  validates_presence_of :title, :description
+  validates_presence_of :title
   belongs_to :user
   has_many :comments, :dependent => :destroy
   accepts_nested_attributes_for :comments
