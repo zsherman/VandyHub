@@ -3,8 +3,7 @@ class PostsController < ApplicationController
 	before_filter :authenticate_user!, :only => [:new]
 
 	def index
-		@posts = Post.find_by_hotness.paginate(:page => params[:page])
-
+		@posts = Post.find_by_hotness.paginate(:page => params[:page], :per_page => 10)
 	end
 
 	def show
