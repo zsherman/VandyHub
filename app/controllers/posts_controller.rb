@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
 	respond_to :html, :xml, :json
-	before_filter: authenticate_user!, :only => "new"
+	before_filter: authenticate_user!, :only => [:new]
 
 	def index
 		@posts = Post.find_by_hotness.paginate(:page => params[:page])
