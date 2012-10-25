@@ -1,9 +1,12 @@
-<%= form_for [@post, @comment] do |f| %>
-   <% @post.errors.full_messages.each do |msg| %>
+<%= form_for [@post, @comment], :html => {:multipart => :true} do |f| %>
+   <% @comment.errors.full_messages.each do |msg| %>
       <p class="post-error" style="color:red"><%= msg %></p>
    <% end %>
    <%= f.hidden_field :parent_id %>
    <%= f.label :content, "Reply" %>
    <%= f.text_area :content, :placeholder => "Comment..." %>
+   <%= f.file_field :image %>
+   <%= f.label :remote_image_url, "or image URL (Please choose one or the other. Large files may take a moment to submit.)" %>
+   <%= f.text_field :remote_image_url, :placeholder => (@comment.image) %>
    <%= f.submit "Post Comment" %>
 <% end %>

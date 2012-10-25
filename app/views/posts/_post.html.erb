@@ -12,7 +12,7 @@
 	</div>
 	<span class="post-title"><%= link_to post.title, post %> <span class="post-user">posted by <%= post.user.username %> (<%= time_ago_in_words(post.created_at)%> ago)</span></span></br>
 		<div class="post-index-image">
-			<% unless !post.image? %><%= image_tag post.image_url(:thumb).to_s %><% end %>
+			<% unless !post.image? %><a href=<%=post.image_url.to_s%>><%= image_tag post.image_url(:thumb).to_s %></a><% end %>
 		</div>
 	<div class="post-teaser">
 		<p class="teaser"><%= raw(Rinku.auto_link(post_teaser(post), :all, 'target="_blank"')) %></p>

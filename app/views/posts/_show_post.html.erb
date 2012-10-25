@@ -10,7 +10,7 @@
 		</div>
 	</div>
 	<span class="post-title"><%= link_to post.title, post %> <span class="post-user">posted by <%= post.user.username %> (<%= time_ago_in_words(post.created_at)%> ago)</span></span></br>
-		<% unless !post.image? %><%= image_tag post.image_url(:thumb).to_s %><% end %>
+		<% unless !post.image? %><a href=<%=post.image_url.to_s%>><%= image_tag post.image_url(:thumb).to_s %></a><% end %>
 		<p class="post-description"><%= raw(Rinku.auto_link(post.description, :all, 'target="_blank"')) %></p>
 	<p class="comment-count"><%= pluralize post.comments.count, "comment" %>
 		<% if current_user && (post.user == current_user || current_user.admin == true) %>
@@ -24,5 +24,8 @@
 
 <%= form_for [@post, @comment] do |f| %>
    <%= f.text_area :content, :rows => 5, :columns => 50 %>
+   <%= f.file_field :image %>
+   <%= f.label :remote_image_url, "or image URL (Please choose one or the other. Large files may take a moment to submit.)" %>
+   <%= f.text_field :remote_image_url, :placeholder => (@comment.image) %>
    <%= f.submit "Post Comment" %>
 <% end %>

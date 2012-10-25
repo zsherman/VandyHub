@@ -1,4 +1,5 @@
 <div class="comment">
+	<% unless !@parent_comment.image? %><a href=<%=@parent_comment.image_url.to_s%>><%= image_tag @parent_comment.image_url(:thumb).to_s %></a><% end %>
 	<%= raw(Rinku.auto_link(@parent_comment.content, :all, 'target="_blank"')) %><span class="comment-info">
 	<% if @parent_comment.user %>
 		<%=@parent_comment.user.username %>

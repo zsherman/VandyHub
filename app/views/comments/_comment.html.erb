@@ -1,5 +1,6 @@
 <div class="comment">
-	<%= raw(Rinku.auto_link(comment.content, :all, 'target="_blank"')) %>
+	<% unless !comment.image? %><a href=<%= comment.image_url.to_s%>><%= image_tag comment.image_url(:thumb).to_s %></a><% end %>
+	<span class="comment-content"><%= raw(Rinku.auto_link(comment.content, :all, 'target="_blank"')) %></span>
 	<span class="comment-info">
 		<% if comment.user %>
 			<%= "Posted by " + comment.user.username unless comment.user.nil? %>
